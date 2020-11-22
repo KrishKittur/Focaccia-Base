@@ -10,7 +10,9 @@ package frc.robot;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
+import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -27,17 +29,29 @@ public class Robot extends TimedRobot {
   WPI_TalonSRX motorRight = new WPI_TalonSRX(1);
   WPI_TalonSRX motorLeft = new WPI_TalonSRX(4);
 
+  /* Initalize the Xbox controller */
+  XboxController controller = new XboxController(1);
+
   @Override
-  public void autonomousInit() {
-    motorRight.set(1);
-    motorLeft.set(1);
+  public void teleopInit() {
+    motorRight.set(0);
+    motorLeft.set(0);
   }
 
-  @Override
-  public void autonomousPeriodic() {
-    motorRight.set(1);
-    motorLeft.set(1);
 
+
+  @Override
+  public void teleopPeriodic() {
+    if (controller.getAButton()) {
+      motorLeft.set(1);
+      motorRight.set(1);
+    } else if (controller.getBButton()) {
+      motorLeft.set(-1);
+      motorRight.set(-2);
+    } else {
+      motorLeft.set(0);
+      motorRight.set(0);
+    }
   }
 
 }
