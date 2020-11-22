@@ -38,8 +38,6 @@ public class Robot extends TimedRobot {
     motorLeft.set(0);
   }
 
-
-
   @Override
   public void teleopPeriodic() {
     if (controller.getAButton()) {
