@@ -13,6 +13,7 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -45,7 +46,7 @@ public class Robot extends TimedRobot {
       motorRight.set(1);
     } else if (controller.getBButton()) {
       motorLeft.set(-1);
-      motorRight.set(-2);
+      motorRight.set(-1);
     } else {
       motorLeft.set(0);
       motorRight.set(0);
