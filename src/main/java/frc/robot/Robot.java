@@ -27,7 +27,7 @@ public class Robot extends TimedRobot {
   private String m_autoSelected;
   private final SendableChooser<String> m_chooser = new SendableChooser<>();
 
-  WPI_TalonSRX motorRight1 = new WPI_TalonSRX(1);
+  WPI_TalonSRX motor1 = new WPI_TalonSRX(1);
 
   /**
    * This function is run when the robot is first started up and should be
@@ -64,7 +64,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousInit() {
-    motorRight1.set(1);
+    motor1.set(1);
 
   }
 
@@ -73,7 +73,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousPeriodic() {
-    motorRight1.set(1);
+    motor1.set(1);
   }
 
   /**
