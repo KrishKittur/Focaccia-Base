@@ -23,7 +23,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class Robot extends TimedRobot {
 
-  // Initialize the motors
+  /* Initialize the motors */
   WPI_TalonSRX motorRight = new WPI_TalonSRX(1);
   WPI_TalonSRX motorLeft = new WPI_TalonSRX(4);
 
